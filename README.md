@@ -21,12 +21,20 @@ This repository began with a detailed product plan and no implementation. The cu
 - Versioned ministry standards with named source authority and effective dates
 - Trusted, versioned resource publishing
 - Persistent notifications with read state and contextual navigation
+- Real global search across people, cells, resources, and workspace destinations
+- Geographic territory intelligence with real stored coordinates and external map handoff
+- Shared calendar with scoped events and recurrence metadata
+- Individual meeting rosters with present, absent, and excused states
+- Governed member transfers with atomic roster movement after approval
+- Historical leadership appointments with explicit start and end dates
+- Explainable operational signals for reporting, attendance, follow-up, and leadership opportunities
+- Administrator-facing audit history
 - Installable PWA shell with offline route fallback
-- Audit events for sign-in, reporting, review, and important record creation
+- Audit events for sign-in, reporting, review, transfers, and important record creation
 - Responsive mobile navigation, loading/error/empty states, keyboard focus, and reduced-motion support
 - Vercel frontend and Cloudflare Worker + D1 deployment configuration
 
-Advanced geographic mapping, MFA/recovery delivery, and background reminder dispatch remain environment- or policy-dependent follow-up capabilities rather than being represented as completed behavior.
+Email/SMS delivery, MFA recovery channels, cloud file uploads, and background reminder dispatch remain environment-dependent capabilities: they require approved providers, credentials, retention policy, and production Cloudflare resources and are not falsely represented as active integrations.
 
 ## Architecture
 
