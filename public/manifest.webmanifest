@@ -1,0 +1,10 @@
+{
+  "name": "Nexus Cell Ministry Command",
+  "short_name": "Nexus",
+  "description": "Cell ministry operations, leadership and multiplication intelligence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#03051b",
+  "theme_color": "#0016be",
+  "icons": [{"src":"/nexus-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

@@ -1,0 +1,15 @@
+export type User={id:string;name:string;email:string;role:string;organization_id?:string}
+export type Cell={id:string;parent_id:string|null;parent_name?:string;name:string;code:string;status:string;location?:string;meeting_day?:string;meeting_time?:string;members:number;leader?:string}
+export type Person={id:string;full_name:string;email?:string;phone?:string;status:string;leadership_stage:string;cell_id:string;cell_name:string;joined_at:string}
+export type Meeting={id:string;cell_id:string;cell_name:string;meeting_type:string;held_at:string;attendance:number;first_timers:number;new_converts:number;notes?:string;status:string}
+export type DashboardData={metrics:{cells:number;people:number;leaders:number;meetings:number;attendance:number;first_timers:number;new_converts:number};recent:Meeting[];activity:{action:string;entity_type:string;detail?:string;created_at:string}[]}
+export type BibleClass={id:string;name:string;cell_id:string;cell_name:string;teacher_id?:string;teacher?:string;schedule?:string;stage:string;status:string;enrolled:number}
+export type FollowUp={id:string;person_name:string;phone?:string;cell_id:string;cell_name:string;assigned_to?:string;assignee?:string;source:string;status:'new'|'contacted'|'returned'|'joined';due_at:string;notes?:string}
+export type Resource={id:string;title:string;category:string;description?:string;url:string;version?:string;status:string;published_at:string}
+export type Standard={id:string;name:string;version:string;source:string;effective_at:string;status:string;rules_json:string}
+export type Notification={id:string;title:string;message:string;type:string;href?:string;read_at?:string;created_at:string}
+export type CalendarEvent={id:string;title:string;event_type:string;starts_at:string;ends_at?:string;location?:string;recurrence:string;org_node_id?:string;scope_name?:string}
+export type Transfer={id:string;person_id:string;person_name:string;from_cell_id:string;from_cell:string;to_cell_id:string;to_cell:string;status:string;category:string;notes?:string;created_at:string;requested_by_name:string}
+export type Assignment={id:string;person_id:string;person_name:string;org_node_id:string;scope_name:string;role:string;status:string;start_date:string;end_date?:string}
+export type AuditLog={id:string;user_name?:string;action:string;entity_type:string;entity_id?:string;detail?:string;created_at:string}
+export type SearchResult={id:string;title:string;subtitle:string;type:string;href:string}
