@@ -14,12 +14,19 @@ This repository began with a detailed product plan and no implementation. The cu
 - Cell directory and cell creation
 - People registry and leadership journey capture
 - Meeting report submission and ledger
-- Database-driven cell genealogy with interactive detail and zoom controls
-- Audit events for sign-in and important record creation
+- Database-driven cell and leadership genealogy with interactive detail and zoom controls
+- Bible Study Class operations with teacher, stage, schedule, and enrollment visibility
+- First-timer/new-convert follow-up journeys with ownership and lifecycle transitions
+- Report approval/return workflow and CSV export
+- Versioned ministry standards with named source authority and effective dates
+- Trusted, versioned resource publishing
+- Persistent notifications with read state and contextual navigation
+- Installable PWA shell with offline route fallback
+- Audit events for sign-in, reporting, review, and important record creation
 - Responsive mobile navigation, loading/error/empty states, keyboard focus, and reduced-motion support
 - Vercel frontend and Cloudflare Worker + D1 deployment configuration
 
-`Resources`, configurable standards, advanced approvals, offline reporting, and notifications are visibly identified as future modules rather than represented as completed behavior.
+Advanced geographic mapping, MFA/recovery delivery, and background reminder dispatch remain environment- or policy-dependent follow-up capabilities rather than being represented as completed behavior.
 
 ## Architecture
 
@@ -31,6 +38,8 @@ Browser
                  └─ Cloudflare D1: relational records and sessions
 ```
 
+The visual system uses a Christ Embassy/LoveWorld-informed spectrum—deep blue (`#0016BE`), royal violet (`#7650B8`), coral (`#F79468`), radiant cyan, and gold—without reproducing or misrepresenting an official trademark asset. The palette is centralized as reusable CSS tokens.
+
 The application intentionally uses only the Cloudflare service currently justified by the product: **D1**. R2, KV, Queues, and Durable Objects should only be introduced when approved resources, caching, background reminders, or real-time coordination actually require them.
 
 ### Data integrity and security
@@ -38,7 +47,7 @@ The application intentionally uses only the Cloudflare service currently justifi
 - Organization ownership is checked on every data mutation.
 - User input is runtime-validated with Zod.
 - SQL uses bound parameters.
-- Sessions store only SHA-256 token hashes; raw tokens remain in HTTP-only, `SameSite=Strict` cookies.
+- Sessions store only SHA-256 token hashes; raw tokens remain in HTTP-only cookies. HTTPS deployments use `Secure; SameSite=None` for compatibility with isolated preview frames; local HTTP uses `SameSite=Lax`. JSON-only APIs and absent cross-origin CORS grants prevent cross-site mutation requests.
 - Passwords use PBKDF2-SHA256 with 120,000 iterations and per-user salts.
 - D1 constraints enforce non-negative attendance, unique cell codes, and foreign-key relationships.
 - Private application routes are excluded from search indexing.
