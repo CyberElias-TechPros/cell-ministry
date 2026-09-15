@@ -21,6 +21,9 @@ This repository began with a detailed product plan and no implementation. The cu
 - Versioned ministry standards with named source authority and effective dates
 - Trusted, versioned resource publishing
 - Persistent notifications with read state and contextual navigation
+- Administrator account provisioning, revocation, temporary credentials, and self-service password change API
+- Bulk people import with preflight validation plus people/report CSV exports
+- Administrator JSON data export for operational backup workflows
 - Real global search across people, cells, resources, and workspace destinations
 - Geographic territory intelligence with real stored coordinates and external map handoff
 - Shared calendar with scoped events and recurrence metadata
