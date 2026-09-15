@@ -1,0 +1,1 @@
+export function Logo({compact=false}:{compact?:boolean}){return <div className="logo-wrap" aria-label="Nexus"><span className="logo-mark"><i/><i/><i/></span>{!compact&&<span><b>NEXUS</b><small>Cell Ministry Command</small></span>}</div>}
