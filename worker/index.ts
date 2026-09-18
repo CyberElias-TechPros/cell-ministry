@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie'
+import { cors } from 'hono/cors'
 import { z } from 'zod'
 import { zValidator } from '@hono/zod-validator'
 
@@ -17,6 +18,12 @@ async function passwordHash(password: string, salt: string) {
   return hex(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: encoder.encode(salt), iterations: 120000 }, key, 256))
 }
 
+app.use('*', cors({
+  origin: (origin) => origin || '*',
+  allowHeaders: ['Content-Type', 'Authorization', 'x-request-id'],
+  allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  credentials: true,
+}))
 app.use('*', async (c, next) => {
   const requestId = c.req.header('x-request-id') || crypto.randomUUID()
   c.header('x-request-id', requestId)
