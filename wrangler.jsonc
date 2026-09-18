@@ -8,7 +8,7 @@
     {
       "binding": "DB",
       "database_name": "cell-ministry",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "5690cc15-c2de-40b9-8afb-5b9cdd0b81a0",
       "migrations_dir": "migrations"
     }
   ]
